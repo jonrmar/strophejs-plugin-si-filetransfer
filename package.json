@@ -1,0 +1,19 @@
+{
+  "name": "strophejs-plugin-si-filetransfer",
+  "version": "0.0.1",
+  "description": "",
+  "main": "strophe.si-filetransfer.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjcorrea/strophejs-plugin-si-filetransfer.git"
+  },
+  "keywords": [],
+  "author": "The strophe plugin developers",
+  "license": "MIT",
+  "devDependencies": {
+  },
+  "peerDependencies": {
+    "strophe.js": "^1.2.12"
+  }
+}
