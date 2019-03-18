@@ -17,9 +17,9 @@
   
   function inVals(stanza, ns) {
     var ok = false;
-    var $mthds = $('si feature x field[var="stream-method"] value', stanza);
-    $mthds.each(function (i, m) {
-      if ($(m).text() === ns) ok = true;
+    var $mthds = stanza.querySelectorAll('si feature x field[var="stream-method"] value');
+    $mthds.forEach(function (m, i) {
+      if (m.textContent === ns) ok = true;
     });
     return ok;
   }
@@ -44,11 +44,11 @@
     },
 
     _receive: function (m) {
-
-      var $m = $(m);
-      var from = $m.attr('from');
-      var id = $m.attr('id')
-      var sid = $('si', $m).attr('id');
+      var $m = new window.DOMParser().parseFromString(m, "text/xml")
+      var from = $m.getAttribute('from');
+      var id = $m.getAttribute('id')
+      var si = $m.querySelector('si')
+      var sid = si.getAttribute('id')
 
       var iq = $iq({
         type: 'result',
@@ -76,10 +76,10 @@
 
       this._send(iq, noop, noop);
 
-      var $file = $('file', $m);
-      var filename = $file.attr('name');
-      var size = $file.attr('size'); 
-      var mime = $('si', $m).attr('mime-type');
+      var $file = $m.querySelector('file');
+      var filename = $file.getAttribute('name');
+      var size = $file.getAttribute('size');
+      var mime = si.getAttribute('mime-type');
 
       // callback message
       if (typeof this._cb === 'function') {
