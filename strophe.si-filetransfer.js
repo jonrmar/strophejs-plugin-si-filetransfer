@@ -44,7 +44,7 @@
     },
 
     _receive: function (m) {
-      var $m = new window.DOMParser().parseFromString(m, "text/xml")
+      var $m = m;
       var from = $m.getAttribute('from');
       var id = $m.getAttribute('id')
       var si = $m.querySelector('si')
