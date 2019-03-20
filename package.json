@@ -6,7 +6,7 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jjcorrea/strophejs-plugin-si-filetransfer.git"
+    "url": "git+https://github.com/jonrmar/strophejs-plugin-si-filetransfer.git"
   },
   "keywords": [],
   "author": "The strophe plugin developers",
